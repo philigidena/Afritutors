@@ -10,9 +10,10 @@ const ProductionShowcase = () => {
     ]
 
     return (
-        <section className="section bg-neutral-900 relative overflow-hidden">
+        <section className="section bg-neutral-950 relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
 
             <div className="container-lg mx-auto relative z-10">
                 {/* Header */}

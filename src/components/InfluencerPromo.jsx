@@ -2,12 +2,9 @@ import { motion } from 'framer-motion'
 
 const InfluencerPromo = () => {
     return (
-        <section className="section bg-neutral-900 relative overflow-hidden">
+        <section className="section bg-neutral-950 relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-
-            {/* Subtle border */}
-            <div className="absolute top-0 left-0 right-0 gold-border" />
 
             <div className="container-lg mx-auto relative z-10">
                 {/* Quote Section */}
@@ -78,8 +75,8 @@ const InfluencerPromo = () => {
                     </motion.div>
                 </div>
 
-                {/* Divider */}
-                <div className="divider my-20" />
+                {/* Subtle spacing */}
+                <div className="my-16 md:my-20" />
 
                 {/* Social Proof - Premium */}
                 <motion.div

@@ -36,7 +36,7 @@ const Footer = () => {
     const phiPattern = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23C4A052' stroke-width='2' opacity='0.03'/%3E%3Crect x='30' y='12' width='4' height='40' rx='1' fill='%23C4A052' opacity='0.03'/%3E%3C/svg%3E")`
 
     return (
-        <footer className="section-sm bg-neutral-950 border-t border-white/5 relative overflow-hidden">
+        <footer className="section-sm bg-neutral-950 relative overflow-hidden">
             {/* Subtle Phi Pattern Background */}
             <div 
                 className="absolute inset-0 pointer-events-none opacity-60"
@@ -114,8 +114,8 @@ const Footer = () => {
                     ))}
                 </div>
 
-                {/* Border */}
-                <div className="gold-border mb-8" />
+                {/* Subtle spacing */}
+                <div className="mb-8" />
 
                 {/* Bottom - Premium */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">

@@ -29,48 +29,72 @@ const HowItWorks = () => {
 
     return (
         <section id="process" className="section bg-neutral-950 relative overflow-hidden">
+            {/* Decorative background elements */}
+            <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/[0.02] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-1/3 left-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
+
             <div className="container-lg mx-auto relative z-10">
                 {/* Header */}
                 <motion.div
-                    className="max-w-2xl mb-16"
+                    className="max-w-2xl mb-16 md:mb-20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
                     <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-px bg-accent" />
+                        <motion.div 
+                            className="w-12 h-px bg-accent"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 48 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        />
                         <p className="text-label">Process</p>
                     </div>
                     <h2 className="text-white">
                         Four steps to{' '}
                         <span className="gradient-text">creative mastery</span>
                     </h2>
+                    <p className="text-neutral-500 mt-4 max-w-lg">
+                        Your journey from curious learner to creative professional starts here.
+                    </p>
                 </motion.div>
 
-                {/* Steps */}
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-16 md:mb-24">
+                {/* Steps - Premium Card Style */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-16 md:mb-24">
                     {steps.map((item, index) => (
                         <motion.div
                             key={index}
-                            className="group relative"
+                            className="group relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-neutral-900/80 to-neutral-900/40 border border-white/[0.06] hover:border-accent/20 backdrop-blur-sm transition-all duration-500"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
+                            whileHover={{ y: -4 }}
                         >
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-900 border border-white/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:border-accent/50 group-hover:shadow-lg group-hover:shadow-accent/10 transition-all duration-500">
-                                <span className="text-accent font-semibold text-sm sm:text-lg">{item.step}</span>
+                            {/* Step number badge */}
+                            <div className="flex items-center justify-between mb-5">
+                                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center group-hover:border-accent/40 group-hover:shadow-lg group-hover:shadow-accent/10 transition-all duration-500">
+                                    <span className="text-accent font-bold text-sm sm:text-base">{item.step}</span>
+                                </div>
+                                {/* Decorative arrow for non-last items */}
+                                {index < 3 && (
+                                    <div className="hidden lg:flex items-center text-neutral-700 group-hover:text-accent/40 transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                    </div>
+                                )}
                             </div>
 
-                            <h3 className="text-white text-base sm:text-xl mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-300">
+                            <h3 className="text-white text-base sm:text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
                                 {item.title}
                             </h3>
                             <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">{item.description}</p>
-
-                            {index < 3 && (
-                                <div className="hidden lg:block absolute top-8 left-[calc(100%+1rem)] w-[calc(100%-2rem)] h-px bg-gradient-to-r from-white/10 to-transparent" />
-                            )}
+                            
+                            {/* Bottom accent line */}
+                            <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-accent/0 to-transparent group-hover:via-accent/30 transition-all duration-500" />
                         </motion.div>
                     ))}
                 </div>
@@ -78,12 +102,14 @@ const HowItWorks = () => {
                 {/* CTA Section - Film Strip Style */}
                 <motion.div
                     id="join"
-                    className="rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 overflow-hidden border border-white/5 glow"
+                    className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/95 to-neutral-800 overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/20 relative"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
+                    {/* Inner glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] via-transparent to-transparent pointer-events-none" />
                     <div className="grid lg:grid-cols-5 gap-0">
                         {/* Left - Content (3 columns) */}
                         <div className="lg:col-span-3 p-6 sm:p-8 md:p-12 lg:p-14 flex flex-col justify-center">
@@ -160,6 +186,7 @@ const HowItWorks = () => {
                     </div>
                 </motion.div>
             </div>
+            
         </section>
     )
 }

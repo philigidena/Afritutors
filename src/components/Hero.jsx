@@ -100,7 +100,7 @@ const Hero = () => {
 
                         {/* Stats Row - Premium */}
                         <motion.div
-                            className="grid grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:items-center sm:gap-8 md:gap-12 pt-6 md:pt-8 border-t border-white/10"
+                            className="grid grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:items-center sm:gap-8 md:gap-12 pt-6 md:pt-8"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}

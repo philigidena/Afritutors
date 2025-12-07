@@ -17,11 +17,12 @@ const WhatIsAfriTutors = () => {
     ]
 
     return (
-        <section id="about" className="section bg-neutral-950 relative">
-            {/* Subtle top border */}
-            <div className="absolute top-0 left-0 right-0 gold-border" />
+        <section id="about" className="section bg-neutral-950 relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/[0.02] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-            <div className="container-lg mx-auto">
+            <div className="container-lg mx-auto relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     {/* Left - Image with premium hover */}
                     <motion.div
@@ -116,7 +117,7 @@ const WhatIsAfriTutors = () => {
                         </div>
 
                         {/* Features - Premium Grid */}
-                        <div className="grid grid-cols-2 gap-6 mt-10 pt-10 border-t border-white/10">
+                        <div className="grid grid-cols-2 gap-6 mt-10 pt-10">
                             {features.map((item, i) => (
                                 <motion.div
                                     key={i}

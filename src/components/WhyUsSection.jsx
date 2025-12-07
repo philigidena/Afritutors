@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const WhyUsSection = () => {
     const features = [
         { title: 'Studio-Grade Production', description: 'Cinema cameras, Steadicam, professional lighting.', icon: '🎥' },
-        { title: 'Ethiopian Instructors', description: 'Local experts who understand our creative landscape.', icon: '🇪🇹' },
+        { title: 'World-Class Instructors', description: 'International experts & local professionals.', icon: '🌍' },
         { title: 'Learn Anywhere', description: 'Access courses on any device, any time.', icon: '💻' },
         { title: 'Affordable Access', description: 'Quality education at prices for Ethiopian learners.', icon: '💰' },
         { title: 'Beginner Friendly', description: 'Start from zero, become professional.', icon: '🚀' },
@@ -14,10 +14,8 @@ const WhyUsSection = () => {
         <section className="section bg-neutral-950 relative overflow-hidden">
             {/* Background gradient */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-1/3 left-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-            {/* Subtle borders */}
-            <div className="absolute top-0 left-0 right-0 gold-border" />
-            <div className="absolute bottom-0 left-0 right-0 gold-border" />
 
             <div className="container-lg mx-auto relative z-10">
                 {/* Header */}
@@ -72,6 +70,7 @@ const WhyUsSection = () => {
                     ))}
                 </div>
             </div>
+            
         </section>
     )
 }

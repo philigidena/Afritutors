@@ -13,9 +13,10 @@ const CoursesSection = () => {
     ]
 
     return (
-        <section id="courses" className="section bg-neutral-900 relative overflow-hidden">
+        <section id="courses" className="section bg-neutral-950 relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
 
             <div className="container-lg mx-auto relative z-10">
                 {/* Header */}
@@ -105,7 +106,7 @@ const CoursesSection = () => {
 
                 {/* Bottom CTA - Premium */}
                 <motion.div
-                    className="mt-10 sm:mt-16 pt-8 sm:pt-16 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8"
+                    className="mt-10 sm:mt-16 pt-8 sm:pt-16 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
