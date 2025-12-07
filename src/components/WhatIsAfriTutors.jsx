@@ -1,6 +1,14 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const WhatIsAfriTutors = () => {
+    const [qualityClicks, setQualityClicks] = useState(0)
+    const qualityLevels = ['4K', '8K', '16K', '∞K']
+    
+    const handleQualityClick = () => {
+        setQualityClicks((prev) => (prev + 1) % qualityLevels.length)
+    }
+
     const features = [
         { label: 'Studio Production', desc: 'Cinema-quality filming', icon: '🎬' },
         { label: 'Expert Instructors', desc: 'International & local', icon: '👨‍🏫' },
@@ -55,10 +63,25 @@ const WhatIsAfriTutors = () => {
                                     <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">Courses</p>
                                 </div>
                                 <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-                                <div>
-                                    <p className="text-xl sm:text-3xl font-semibold gradient-text">4K</p>
-                                    <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">Quality</p>
-                                </div>
+                                <motion.div 
+                                    className="cursor-pointer select-none"
+                                    onClick={handleQualityClick}
+                                    whileTap={{ scale: 0.95 }}
+                                    title="Click me!"
+                                >
+                                    <motion.p 
+                                        className="text-xl sm:text-3xl font-semibold gradient-text"
+                                        key={qualityClicks}
+                                        initial={{ y: -10, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        transition={{ type: 'spring', stiffness: 300 }}
+                                    >
+                                        {qualityLevels[qualityClicks]}
+                                    </motion.p>
+                                    <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">
+                                        {qualityClicks === 3 ? '🚀 Unlimited!' : 'Quality'}
+                                    </p>
+                                </motion.div>
                             </div>
                         </motion.div>
                     </motion.div>

@@ -1,7 +1,23 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
+    const [easterEggTriggered, setEasterEggTriggered] = useState(false)
+    const [clickCount, setClickCount] = useState(0)
+
+    // Easter egg: Triple click on "Philocom" reveals a message
+    const handlePhilocomClick = () => {
+        const newCount = clickCount + 1
+        setClickCount(newCount)
+        if (newCount >= 3) {
+            setEasterEggTriggered(true)
+            setTimeout(() => {
+                setEasterEggTriggered(false)
+                setClickCount(0)
+            }, 3000)
+        }
+    }
 
     const links = {
         Courses: ['Cinematography', 'Video Editing', 'Scriptwriting', 'Production'],
@@ -16,8 +32,21 @@ const Footer = () => {
         { icon: '♪', label: 'TikTok' },
     ]
 
+    // Subtle Phi (Φ) SVG pattern - golden color
+    const phiPattern = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23C4A052' stroke-width='2' opacity='0.03'/%3E%3Crect x='30' y='12' width='4' height='40' rx='1' fill='%23C4A052' opacity='0.03'/%3E%3C/svg%3E")`
+
     return (
         <footer className="section-sm bg-neutral-950 border-t border-white/5 relative overflow-hidden">
+            {/* Subtle Phi Pattern Background */}
+            <div 
+                className="absolute inset-0 pointer-events-none opacity-60"
+                style={{ 
+                    backgroundImage: phiPattern,
+                    backgroundSize: '80px 80px',
+                    backgroundPosition: 'center',
+                }}
+            />
+            
             {/* Background glow */}
             <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -100,6 +129,29 @@ const Footer = () => {
                             transition={{ duration: 1, repeat: Infinity }}
                         >♥</motion.span> in Ethiopia
                     </p>
+                </div>
+
+                {/* Subtle Builder Credit */}
+                <div className="mt-8 pt-4 border-t border-white/[0.03] text-center">
+                    <p 
+                        className="text-[10px] text-neutral-700/50 tracking-wider cursor-default select-none hover:text-neutral-600/60 transition-colors duration-500"
+                        onClick={handlePhilocomClick}
+                    >
+                        Built with precision by <span className="hover:text-accent/40 transition-colors">Filmon</span> · <span className="hover:text-accent/40 transition-colors">Philocom</span>
+                    </p>
+                    
+                    {/* Easter Egg Message */}
+                    <motion.p
+                        className="text-[9px] text-accent/60 mt-1"
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ 
+                            opacity: easterEggTriggered ? 1 : 0, 
+                            y: easterEggTriggered ? 0 : -5 
+                        }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        ✨ You found the secret! Thanks for exploring ✨
+                    </motion.p>
                 </div>
             </div>
         </footer>

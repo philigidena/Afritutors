@@ -7,10 +7,12 @@ import ProductionShowcase from '../components/ProductionShowcase'
 import HowItWorks from '../components/HowItWorks'
 import InfluencerPromo from '../components/InfluencerPromo'
 import Footer from '../components/Footer'
+import EasterEggs from '../components/EasterEggs'
 
 const Home = () => {
     return (
         <main className="overflow-hidden">
+            <EasterEggs />
             <Navbar />
             <Hero />
             <WhatIsAfriTutors />

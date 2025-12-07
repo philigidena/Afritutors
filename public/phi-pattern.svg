@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Φ: circle outline - golden, subtle -->
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#C4A052" stroke-width="2" opacity="0.04"/>
+  <!-- Φ: vertical bar - golden, subtle -->
+  <rect x="30" y="12" width="4" height="40" rx="1" fill="#C4A052" opacity="0.04"/>
+</svg>
+

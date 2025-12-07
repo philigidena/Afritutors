@@ -4,12 +4,26 @@ import { motion, AnimatePresence } from 'framer-motion'
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const [logoClicks, setLogoClicks] = useState(0)
+    const [showLogoEgg, setShowLogoEgg] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50)
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    // Easter egg: 7 clicks on logo
+    const handleLogoClick = (e) => {
+        e.preventDefault()
+        const newCount = logoClicks + 1
+        setLogoClicks(newCount)
+        if (newCount >= 7) {
+            setShowLogoEgg(true)
+            setLogoClicks(0)
+            setTimeout(() => setShowLogoEgg(false), 2000)
+        }
+    }
 
     const navLinks = [
         { name: 'About', href: '#about' },
@@ -23,12 +37,30 @@ const Navbar = () => {
             <div className="container-lg mx-auto px-6 md:px-12 lg:px-24">
                 <div className="flex items-center justify-between h-20 md:h-24">
                     {/* Logo - BIGGER */}
-                    <a href="/" className="relative z-10">
-                        <img
+                    <a href="/" className="relative z-10" onClick={handleLogoClick}>
+                        <motion.img
                             src="/Afri_tutors_logo_white.png"
                             alt="AfriTutors"
                             className="h-12 md:h-14 w-auto"
+                            animate={showLogoEgg ? { 
+                                rotate: [0, -10, 10, -10, 10, 0],
+                                scale: [1, 1.1, 1]
+                            } : {}}
+                            transition={{ duration: 0.5 }}
                         />
+                        {/* Secret tooltip */}
+                        <AnimatePresence>
+                            {showLogoEgg && (
+                                <motion.span
+                                    className="absolute -bottom-8 left-0 text-[10px] text-accent whitespace-nowrap"
+                                    initial={{ opacity: 0, y: -5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    🎬 Lights, Camera, Learn!
+                                </motion.span>
+                            )}
+                        </AnimatePresence>
                     </a>
 
                     {/* Desktop Nav */}
