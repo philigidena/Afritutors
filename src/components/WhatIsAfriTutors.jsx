@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { SplitReveal } from './AnimatedText'
 
 const WhatIsAfriTutors = () => {
     const [qualityClicks, setQualityClicks] = useState(0)
@@ -99,9 +100,9 @@ const WhatIsAfriTutors = () => {
                             <p className="text-label">About Us</p>
                         </div>
 
-                        <h2 className="text-white mb-8">
-                            Ethiopia's first studio-quality creative{' '}
-                            <span className="gradient-text">education platform</span>
+                        <h2 className="text-white mb-8 uppercase">
+                            <SplitReveal>Ethiopia's First Studio-Quality Creative</SplitReveal>{' '}
+                            <span className="gradient-text text-glow">Education Platform</span>
                         </h2>
 
                         <div className="space-y-4 md:space-y-5 text-body-lg">

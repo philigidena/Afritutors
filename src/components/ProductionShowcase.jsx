@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import LazyVideo from './LazyVideo'
+import { SplitReveal } from './AnimatedText'
 
 const ProductionShowcase = () => {
     const equipment = [
@@ -28,9 +29,9 @@ const ProductionShowcase = () => {
                             <div className="w-12 h-px bg-accent" />
                             <p className="text-label">Production</p>
                         </div>
-                        <h2 className="text-white">
-                            Shot like a film,{' '}
-                            <span className="gradient-text">taught like a masterclass</span>
+                        <h2 className="text-white uppercase">
+                            <SplitReveal>Shot Like A Film,</SplitReveal>{' '}
+                            <span className="gradient-text text-glow">Taught Like A Masterclass</span>
                         </h2>
                     </motion.div>
                     <motion.div

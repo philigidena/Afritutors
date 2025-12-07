@@ -41,21 +41,22 @@ const Hero = () => {
                         {/* Headlines with stagger */}
                         <div className="overflow-hidden mb-2">
                             <motion.h1
+                                className="uppercase"
                                 initial={{ y: "100%" }}
                                 animate={{ y: 0 }}
                                 transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }}
                             >
-                                Learn creative arts
+                                Learn Creative Arts
                             </motion.h1>
                         </div>
                         <div className="overflow-hidden mb-8">
                             <motion.h1
-                                className="gradient-text"
+                                className="gradient-text text-glow uppercase"
                                 initial={{ y: "100%" }}
                                 animate={{ y: 0 }}
                                 transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.2 }}
                             >
-                                from the best
+                                From The Best
                             </motion.h1>
                         </div>
 

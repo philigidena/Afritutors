@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { SplitReveal } from './AnimatedText'
 
 const CoursesSection = () => {
     const courses = [
@@ -32,9 +33,9 @@ const CoursesSection = () => {
                             <div className="w-12 h-px bg-accent" />
                             <p className="text-label">Courses</p>
                         </div>
-                        <h2 className="text-white">
-                            8 creative courses to{' '}
-                            <span className="gradient-text">master your craft</span>
+                        <h2 className="text-white uppercase">
+                            <SplitReveal>8 Creative Courses To</SplitReveal>{' '}
+                            <span className="gradient-text text-glow">Master Your Craft</span>
                         </h2>
                     </motion.div>
 

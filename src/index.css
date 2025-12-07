@@ -36,6 +36,24 @@
     overflow-x: hidden;
   }
 
+  /* African geometric pattern background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M0 20 L8 20 L8 8 L20 8 L20 0' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M20 40 L20 32 L32 32 L32 20 L40 20' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M40 0 L40 8 L52 8 L52 20 L60 20' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M60 40 L60 32 L72 32 L72 20 L80 20' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M0 60 L8 60 L8 48 L20 48 L20 40' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M20 80 L20 72 L32 72 L32 60 L40 60' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M40 40 L40 48 L52 48 L52 60 L60 60' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Cpath d='M60 80 L60 72 L72 72 L72 60 L80 60' fill='none' stroke='%23C4A052' stroke-width='2.5'/%3E%3Crect x='18' y='18' width='4' height='4' fill='%23C4A052'/%3E%3Crect x='58' y='18' width='4' height='4' fill='%23C4A052'/%3E%3Crect x='18' y='58' width='4' height='4' fill='%23C4A052'/%3E%3Crect x='58' y='58' width='4' height='4' fill='%23C4A052'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+  }
+
+  /* Ensure content is above pattern */
+  main, header, section, nav {
+    position: relative;
+    z-index: 1;
+  }
+
   /* Kenyan Coffee Bold for headings */
   h1 {
     font-family: 'Kenyan Coffee', serif;
@@ -120,12 +138,39 @@
     background-color: #C4A052;
   }
 
-  /* Premium Gradient Text */
+  /* Premium Gradient Text with Shimmer */
   .gradient-text {
+    background: linear-gradient(
+      90deg, 
+      #C4A052 0%, 
+      #E8D5A3 25%, 
+      #C4A052 50%, 
+      #E8D5A3 75%, 
+      #C4A052 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 4s linear infinite;
+  }
+
+  /* Static gradient text (no animation) */
+  .gradient-text-static {
     background: linear-gradient(135deg, #C4A052 0%, #E8D5A3 40%, #C4A052 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Animated text reveal */
+  .text-animate {
+    animation: textReveal 0.8s ease-out forwards;
+  }
+
+  /* Subtle glow pulse effect for special text */
+  .text-glow {
+    animation: glowPulse 4s ease-in-out infinite;
   }
 
   /* Subtle Border - extremely subtle, barely visible */
@@ -225,6 +270,47 @@
   }
   to {
     transform: translateY(0);
+  }
+}
+
+/* Text Animation Keyframes */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes letterFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(196, 160, 82, 0.15);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(196, 160, 82, 0.25);
   }
 }
 

@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import WhatIsAfriTutors from '../components/WhatIsAfriTutors'
 import CoursesSection from '../components/CoursesSection'
 import WhyUsSection from '../components/WhyUsSection'
+import InfluencerShowcase from '../components/InfluencerShowcase'
 import ProductionShowcase from '../components/ProductionShowcase'
 import HowItWorks from '../components/HowItWorks'
 import InfluencerPromo from '../components/InfluencerPromo'
@@ -18,6 +19,7 @@ const Home = () => {
             <WhatIsAfriTutors />
             <CoursesSection />
             <WhyUsSection />
+            <InfluencerShowcase />
             <ProductionShowcase />
             <HowItWorks />
             <InfluencerPromo />

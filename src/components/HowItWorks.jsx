@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { SplitReveal } from './AnimatedText'
 
 const HowItWorks = () => {
     const steps = [
@@ -52,9 +53,9 @@ const HowItWorks = () => {
                         />
                         <p className="text-label">Process</p>
                     </div>
-                    <h2 className="text-white">
-                        Four steps to{' '}
-                        <span className="gradient-text">creative mastery</span>
+                    <h2 className="text-white uppercase">
+                        <SplitReveal>Four Steps To</SplitReveal>{' '}
+                        <span className="gradient-text text-glow">Creative Mastery</span>
                     </h2>
                     <p className="text-neutral-500 mt-4 max-w-lg">
                         Your journey from curious learner to creative professional starts here.

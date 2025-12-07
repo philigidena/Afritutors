@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { SplitReveal } from './AnimatedText'
 
 const WhyUsSection = () => {
     const features = [
@@ -30,9 +31,9 @@ const WhyUsSection = () => {
                         <div className="w-12 h-px bg-accent" />
                         <p className="text-label">Why AfriTutors</p>
                     </div>
-                    <h2 className="text-white">
-                        We're building something{' '}
-                        <span className="gradient-text">different</span>
+                    <h2 className="text-white uppercase">
+                        <SplitReveal>We're Building Something</SplitReveal>{' '}
+                        <span className="gradient-text text-glow">Different</span>
                     </h2>
                 </motion.div>
 
