@@ -10,6 +10,7 @@ const Hero = () => {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover"
                 >
                     <source src="/Hero_section_vid.mp4" type="video/mp4" />
@@ -60,25 +61,25 @@ const Hero = () => {
 
                         {/* Subheadline */}
                         <motion.p
-                            className="text-body-lg max-w-xl mb-10"
+                            className="text-body-lg max-w-xl mb-8 md:mb-10"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
                             8 studio-produced courses in cinematography, editing, directing & more.
-                            All taught by Ethiopia's top creative professionals.
+                            Taught by international experts and Ethiopia's top creative professionals.
                         </motion.p>
 
                         {/* CTAs */}
                         <motion.div
-                            className="flex flex-wrap gap-4 mb-16"
+                            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.5 }}
                         >
                             <motion.a
                                 href="#join"
-                                className="btn-primary"
+                                className="btn-primary text-center"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -89,7 +90,7 @@ const Hero = () => {
                             </motion.a>
                             <motion.a
                                 href="#about"
-                                className="btn-outline"
+                                className="btn-outline text-center"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -99,27 +100,27 @@ const Hero = () => {
 
                         {/* Stats Row - Premium */}
                         <motion.div
-                            className="flex flex-wrap items-center gap-8 md:gap-12 pt-8 border-t border-white/10"
+                            className="grid grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:items-center sm:gap-8 md:gap-12 pt-6 md:pt-8 border-t border-white/10"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
                             {[
                                 { value: '8', label: 'Courses', suffix: '' },
-                                { value: '80', label: 'Credit Hours', suffix: '+' },
+                                { value: '80', label: 'Hours', suffix: '+' },
                                 { value: '4K', label: 'Quality', suffix: '' },
                             ].map((stat, i) => (
                                 <motion.div
                                     key={i}
-                                    className="flex items-baseline gap-2"
+                                    className="flex flex-col sm:flex-row sm:items-baseline gap-0 sm:gap-2"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.4, delay: 0.7 + i * 0.1 }}
                                 >
-                                    <p className="text-3xl md:text-4xl font-semibold text-white">
+                                    <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
                                         {stat.value}<span className="text-accent">{stat.suffix}</span>
                                     </p>
-                                    <p className="text-sm uppercase tracking-widest text-neutral-500">{stat.label}</p>
+                                    <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest text-neutral-500">{stat.label}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -127,9 +128,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Scroll Indicator - Hidden on very small screens */}
             <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+                className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 hidden sm:flex"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}

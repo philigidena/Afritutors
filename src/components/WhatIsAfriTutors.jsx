@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const WhatIsAfriTutors = () => {
     const features = [
         { label: 'Studio Production', desc: 'Cinema-quality filming', icon: '🎬' },
-        { label: 'Local Experts', desc: 'Ethiopian instructors', icon: '👨‍🏫' },
+        { label: 'Expert Instructors', desc: 'International & local', icon: '👨‍🏫' },
         { label: 'Learn Anywhere', desc: 'Mobile & desktop', icon: '📱' },
         { label: 'Certificates', desc: 'Upon completion', icon: '🎓' },
     ]
@@ -23,19 +23,22 @@ const WhatIsAfriTutors = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <img
-                            src="/african-mother-and-daughter-having-fun-using-vinta-2025-02-21-13-22-14-utc.jpg"
-                            alt="Learning together"
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+                        <picture>
+                            <source srcSet="/optimized/african-mother-and-daughter-having-fun-using-vinta-2025-02-21-13-22-14-utc.webp" type="image/webp" />
+                            <img
+                                src="/optimized/african-mother-and-daughter-having-fun-using-vinta-2025-02-21-13-22-14-utc.jpg"
+                                alt="Learning together"
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </picture>
 
                         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
 
                         {/* Stats Badge - Premium */}
                         <motion.div
-                            className="absolute bottom-6 left-6 right-6 bg-neutral-950/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10 glow-sm"
+                            className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-neutral-950/90 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 glow-sm"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -43,18 +46,18 @@ const WhatIsAfriTutors = () => {
                         >
                             <div className="flex items-center justify-between text-center">
                                 <div>
-                                    <p className="text-3xl font-semibold text-white">80<span className="text-accent">+</span></p>
-                                    <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Hours</p>
+                                    <p className="text-xl sm:text-3xl font-semibold text-white">80<span className="text-accent">+</span></p>
+                                    <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">Hours</p>
                                 </div>
-                                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                                <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
                                 <div>
-                                    <p className="text-3xl font-semibold text-white">8</p>
-                                    <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Courses</p>
+                                    <p className="text-xl sm:text-3xl font-semibold text-white">8</p>
+                                    <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">Courses</p>
                                 </div>
-                                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                                <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
                                 <div>
-                                    <p className="text-3xl font-semibold gradient-text">4K</p>
-                                    <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Quality</p>
+                                    <p className="text-xl sm:text-3xl font-semibold gradient-text">4K</p>
+                                    <p className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-neutral-500 mt-1">Quality</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -77,15 +80,15 @@ const WhatIsAfriTutors = () => {
                             <span className="gradient-text">education platform</span>
                         </h2>
 
-                        <div className="space-y-5 text-body-lg">
+                        <div className="space-y-4 md:space-y-5 text-body-lg">
                             <p>
                                 AfriTutors brings world-class film and creative education to Ethiopia.
                                 Our courses are filmed with cinema cameras, professional lighting, and
                                 the same production standards used in major film productions.
                             </p>
                             <p>
-                                Every lesson is taught by local experts who understand our creative
-                                landscape, culture, and industry needs.
+                                Every lesson is taught by international experts and local professionals 
+                                who understand our creative landscape, culture, and industry needs.
                             </p>
                         </div>
 

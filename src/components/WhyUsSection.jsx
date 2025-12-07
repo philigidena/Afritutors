@@ -39,30 +39,30 @@ const WhyUsSection = () => {
                 </motion.div>
 
                 {/* Features Grid - Premium */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1 bg-white/5 rounded-3xl overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px sm:gap-1 bg-white/5 rounded-2xl sm:rounded-3xl overflow-hidden">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
-                            className="bg-neutral-950 p-8 group relative hover:bg-neutral-900/50 transition-all duration-500"
+                            className="bg-neutral-950 p-5 sm:p-8 group relative hover:bg-neutral-900/50 transition-all duration-500"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                         >
                             {/* Number watermark */}
-                            <p className="text-5xl font-bold text-white/[0.03] absolute top-4 right-4">
+                            <p className="text-4xl sm:text-5xl font-bold text-white/[0.03] absolute top-3 sm:top-4 right-3 sm:right-4">
                                 0{index + 1}
                             </p>
 
                             {/* Icon */}
-                            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                                <span className="text-2xl">{feature.icon}</span>
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300">
+                                <span className="text-xl sm:text-2xl">{feature.icon}</span>
                             </div>
 
-                            <h3 className="text-white text-xl mb-3 group-hover:text-accent transition-colors duration-300">
+                            <h3 className="text-white text-base sm:text-xl mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-300">
                                 {feature.title}
                             </h3>
-                            <p className="text-neutral-500 text-sm leading-relaxed">
+                            <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">
                                 {feature.description}
                             </p>
 

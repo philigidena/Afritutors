@@ -25,16 +25,16 @@ const InfluencerPromo = () => {
 
                     {/* Large Quote - Premium */}
                     <motion.div
-                        className="relative mb-12"
+                        className="relative mb-8 md:mb-12"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
                         {/* Quote marks */}
-                        <span className="absolute -top-8 -left-4 text-8xl text-accent/10 font-serif">"</span>
+                        <span className="absolute -top-4 sm:-top-8 -left-2 sm:-left-4 text-5xl sm:text-8xl text-accent/10 font-serif">"</span>
 
-                        <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight relative z-10">
+                        <blockquote className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight relative z-10 px-4 sm:px-0">
                             AfriTutors is changing how we learn creative skills in{' '}
                             <span className="gradient-text">Ethiopia</span>. The production quality is unlike anything I've seen.
                         </blockquote>
@@ -42,17 +42,17 @@ const InfluencerPromo = () => {
 
                     {/* Avatar Group - Premium */}
                     <motion.div
-                        className="flex items-center justify-center gap-6"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        <div className="flex -space-x-3">
+                        <div className="flex -space-x-2 sm:-space-x-3">
                             {['A', 'B', 'S', 'M', 'T'].map((initial, i) => (
                                 <motion.div
                                     key={i}
-                                    className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 border-2 border-neutral-900 flex items-center justify-center text-accent text-sm font-semibold shadow-lg"
+                                    className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 border-2 border-neutral-900 flex items-center justify-center text-accent text-xs sm:text-sm font-semibold shadow-lg"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -62,7 +62,7 @@ const InfluencerPromo = () => {
                                 </motion.div>
                             ))}
                             <motion.div
-                                className="w-12 h-12 rounded-full bg-accent border-2 border-neutral-900 flex items-center justify-center text-neutral-950 text-xs font-bold"
+                                className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-accent border-2 border-neutral-900 flex items-center justify-center text-neutral-950 text-[10px] sm:text-xs font-bold"
                                 initial={{ opacity: 0, x: -10 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -71,9 +71,9 @@ const InfluencerPromo = () => {
                                 +99
                             </motion.div>
                         </div>
-                        <div className="text-left">
-                            <p className="text-white font-semibold">Trusted by creators</p>
-                            <p className="text-sm text-neutral-500">Ethiopia's top talent</p>
+                        <div className="text-center sm:text-left">
+                            <p className="text-white font-semibold text-sm sm:text-base">Trusted by creators</p>
+                            <p className="text-xs sm:text-sm text-neutral-500">Ethiopia's top talent</p>
                         </div>
                     </motion.div>
                 </div>
@@ -88,8 +88,8 @@ const InfluencerPromo = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    <p className="text-label mb-10">As Featured On</p>
-                    <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+                    <p className="text-label mb-6 sm:mb-10">As Featured On</p>
+                    <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16">
                         {[
                             { name: 'TikTok', icon: '📱' },
                             { name: 'YouTube', icon: '▶️' },
@@ -98,11 +98,11 @@ const InfluencerPromo = () => {
                         ].map((platform, i) => (
                             <motion.div
                                 key={i}
-                                className="flex items-center gap-2 text-neutral-500 hover:text-accent transition-colors duration-300 cursor-pointer group"
+                                className="flex items-center justify-center gap-2 text-neutral-500 hover:text-accent transition-colors duration-300 cursor-pointer group"
                                 whileHover={{ scale: 1.05 }}
                             >
-                                <span className="text-2xl group-hover:scale-110 transition-transform">{platform.icon}</span>
-                                <span className="text-xl font-semibold">{platform.name}</span>
+                                <span className="text-xl sm:text-2xl group-hover:scale-110 transition-transform">{platform.icon}</span>
+                                <span className="text-base sm:text-xl font-semibold">{platform.name}</span>
                             </motion.div>
                         ))}
                     </div>
