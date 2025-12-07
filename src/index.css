@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== KENYAN COFFEE FONT ===== */
+@font-face {
+  font-family: 'Kenyan Coffee';
+  src: url('/fonts/kenyan coffee bd.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kenyan Coffee';
+  src: url('/fonts/kenyan coffee rg.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== POLISHED PREMIUM DESIGN ===== */
+
+@layer base {
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-inter bg-neutral-950 text-white;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  /* Kenyan Coffee Bold for headings */
+  h1 {
+    font-family: 'Kenyan Coffee', serif;
+    font-weight: 700;
+    @apply tracking-normal;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-family: 'Kenyan Coffee', serif;
+    font-weight: 700;
+    @apply tracking-normal;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-family: 'Kenyan Coffee', serif;
+    font-weight: 700;
+    @apply text-xl md:text-2xl;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply text-neutral-400;
+    line-height: 1.7;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}
+
+@layer components {
+
+  /* Premium Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-accent text-neutral-950 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-white/20 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-neutral-900 hover:border-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-white font-medium transition-all duration-300 hover:text-accent;
+  }
+
+  /* Sections */
+  .section {
+    @apply px-6 md:px-12 lg:px-24 py-24 md:py-32 lg:py-40 relative;
+  }
+
+  .section-sm {
+    @apply px-6 md:px-12 lg:px-24 py-16 md:py-24;
+  }
+
+  .container-lg {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Text */
+  .text-label {
+    @apply text-xs uppercase tracking-[0.25em] text-accent font-semibold;
+  }
+
+  .text-body-lg {
+    @apply text-lg md:text-xl text-neutral-400 leading-relaxed;
+  }
+
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  /* Accent */
+  .accent {
+    color: #C4A052;
+  }
+
+  .accent-bg {
+    background-color: #C4A052;
+  }
+
+  /* Premium Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #C4A052 0%, #E8D5A3 40%, #C4A052 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle Border */
+  .gold-border {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(196, 160, 82, 0.3) 50%, transparent 100%);
+  }
+
+  /* Glow Effects */
+  .glow {
+    box-shadow: 0 0 60px rgba(196, 160, 82, 0.15);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 30px rgba(196, 160, 82, 0.1);
+  }
+
+  /* Powered By */
+  .powered-by {
+    @apply text-xs text-neutral-600 flex items-center gap-2;
+  }
+
+  .powered-by span {
+    @apply text-accent font-semibold;
+  }
+
+  /* Premium Card */
+  .card {
+    @apply relative bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-neutral-900/80 hover:border-white/10;
+  }
+
+  /* Film Strip Animation - INFINITE SEAMLESS */
+  .film-strip-wrapper {
+    @apply relative overflow-hidden;
+    height: 100%;
+  }
+
+  .film-strip-track {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .film-strip-track.scroll-up {
+    animation: infiniteScrollUp 30s linear infinite;
+  }
+
+  .film-strip-track.scroll-down {
+    animation: infiniteScrollDown 30s linear infinite;
+  }
+
+  .film-strip-image {
+    @apply w-full rounded-lg overflow-hidden flex-shrink-0;
+    aspect-ratio: 3/4;
+  }
+
+  .film-strip-image img {
+    @apply w-full h-full object-cover;
+  }
+}
+
+/* Infinite Seamless Scroll Keyframes */
+@keyframes infiniteScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes infiniteScrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: #C4A052;
+  color: #0A0A0A;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C4A052, #9A7B3E);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4A052;
+}
+
+/* Focus States */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 160, 82, 0.3);
+}
